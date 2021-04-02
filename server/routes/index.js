@@ -30,7 +30,7 @@ router.get('/show/:id', async (req, res, next) => {
 router.post('/show', async (req, res, next) => {
     try{
         let result = await db.create(req.body.title, req.body.body);
-        res.status(200).json(result);
+        res.status(200).json("Notes Succesfully Created");
     } catch(e){
         console.log(e);
         res.sendStatus(500);
@@ -40,7 +40,7 @@ router.post('/show', async (req, res, next) => {
 router.put('/show/:id', async (req, res, next) => {
     try{
         let result = await db.update(req.params.id, req.body.title, req.body.body);
-        res.status(200).json(result);
+        res.status(200).json("Notes Succesfully Edited");
     } catch(e){
         console.log(e);
         res.sendStatus(500);
@@ -50,7 +50,7 @@ router.put('/show/:id', async (req, res, next) => {
 router.delete('/show/:id', async (req, res, next) => {
     try{
         let result = await db.delete(req.params.id);
-        res.status(200).json(result);
+        res.status(200).json("Notes Succesfully Deleted");
     } catch(e){
         console.log(e);
         res.sendStatus(500);
